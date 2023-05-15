@@ -24,10 +24,14 @@ const Menu = () => (
 );
 
 const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(() => {
+    return false;
+  });
 
   function handelClick() {
-    setToggleMenu(!toggleMenu);
+    setToggleMenu((prevState) => {
+      return !prevState;
+    });
   }
 
   return (
