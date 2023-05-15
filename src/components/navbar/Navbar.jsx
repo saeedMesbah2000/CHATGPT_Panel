@@ -24,14 +24,10 @@ const Menu = () => (
 );
 
 const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = useState(() => {
-    return false;
-  });
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   function handelClick() {
-    setToggleMenu((prevState) => {
-      return !prevState;
-    });
+    setToggleMenu(!toggleMenu);
   }
 
   return (
@@ -44,7 +40,6 @@ const Navbar = () => {
           <Menu />
         </div>
       </div>
-
       <div className="gpt3__navbar-sign">
         <p>Sign in</p>
         <button type="button">Sign up</button>
